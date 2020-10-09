@@ -16,7 +16,6 @@ This repository contains all code + deployment scripts for the Tailwind Traders 
 * [Test image classiffier](#test-image)
 * [Contributing](#contributing)
 
-
 # <a name="repositories"></a>Repositories
 
 For this demo reference, we built several consumer and line-of-business applications and a set of backend services. You can find all repositories in the following locations:
