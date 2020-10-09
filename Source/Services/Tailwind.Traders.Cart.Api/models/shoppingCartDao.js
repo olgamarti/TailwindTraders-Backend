@@ -61,6 +61,17 @@ class ShoppingCartDao {
             throw new Error(`Cosmosdb error ${e.code} when loading doc with id ${id}`);
         }
     }
+    
+       async updateQuantity(id, newqty) {
+        const itemToReplace = this.container.item(id);
+        try {
+            const { code, body: doc } = await itemToReplace.read();
+            doc.qty = newqty;
+            await itemToReplace.replace(doc);
+        } catch (e) {
+            throw new Error(`Cosmosdb error ${e.code} when loading doc with id ${id}`);
+        }
+    }
 
     async deleteItem(id) {
         const itemToDelete = this.container.item(id);
